@@ -20,8 +20,8 @@
 	}
 	// a a b
  	int count = 0;
-    for (int i = index + 1; i < ip.length(); i++){
-    	if (ip.charAt(i) != ip.charAt(index)){
+    	for (int i = index + 1; i < ip.length(); i++){
+    		if (ip.charAt(i) != ip.charAt(index)){
     		break;
     	}
     	count++;
