@@ -1,0 +1,81 @@
+Constructive feedback from the manager →
+    
+1) You cannot agree on a lot of things, I am a bit hesitant to have these conflicts in a meeting, but there will be self conflicts. I then delay raising this with the team or person of concern, as I try to collate my reasoning and if needed data, but this asynchronous mode leads to eating up my effort and time.
+So I have been sharing this with my manager about it and he has noticed multiple times.
+He has always asked me to put my views on the table always, reasoning or data and not worry too much about it.
+
+
+2) Mentorship / Team learnings.
+   This is very important, collaboration is success.
+   I have mentored junior engineers in the team. Also participated in their onboarding process and inhouse tech stuff. 
+   Compiling a list of links to internal infrastructure and tools. 
+   Some setups settings in IDE etc,
+   Git commands
+
+   This is sth majority of the people like.  Sometimes what I have seen is the new engineers have a peer group and they just do what each other does.
+
+   Also navigating getting things done with the cross teams at wayfair, facilitating them, this is also a major hiccup I have seen across.
+
+   In wayfair we have an mentorship program for interns where they pair up engineers with interns. I have participated in them couple of time, you are responsible for the interns and the delivery of his project.
+
+
+3) Building positive relationship is always necessary and in a fast moving environment this becomes harder, so few things I have tried and tasted success with is 
+   1) Asyn code reviewing sessions ( I do not want to leave 100s of comments) --> builds confidence, lets them make mistakes and progress in faster pace with psychological safety.
+   2) Giving time --> you give your time, so from mentees or team members you learn their interests and then yes make time and accomodate their interests and pick up activities. 
+   Eg : Mentee --> Min (Malaysian guy -> fan of roti canai)
+   3) how do you get them to change the entire code
+
+4) Biggest challenge was always been keeping my team members motivated, I think thats very important along with their tech growth.
+   Accountable --> start a document. 
+   Some if they are accountable --> entrust them with a new technology
+   Output only matters
+   neaking some tech tickets in the sprint board (I do side stuff)
+
+5) 
+
+public static int getRandomisedPivotIdex(int start, int end){
+
+    Random rand  = new Random();
+    return (rand.nextInt(end-start) + start);
+
+}
+
+public static int QuickS(int[] nums, int start, int end){
+   
+    if (start >= end)
+        return;
+
+
+    int iPi = getRandomisedPivotIdex(start, end);
+
+    int partitionI = partition(nums, start, end, iPi);
+    
+    QuickS(nums, start, partitionI);
+    QuickS(nums, partitionI + 1, end);
+}
+
+
+public static int partition(int[] nums, int start, int end, int ipi){
+
+    swap(nums, start, ipi);
+    int pivotElement = nums[start];
+    int orange = start;
+
+    for (int green = start; green <= end; green++){
+       if (nums[green] < pivotElemet) {
+           orange++;
+           swap(nums, orange, green);
+       }    
+    }
+
+    swap(nums, orange, start);
+    return orange;
+}
+
+public static void swap(int[] nums, int i , int j) {
+
+   int temp = nums[i];
+   nums[i] = nums[j];
+   nums[j] = temp;
+
+}
