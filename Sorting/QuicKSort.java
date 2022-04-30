@@ -24,6 +24,38 @@ public class QuicKSort {
         QuickS(nums, partitionI + 1, end);
     }
     
+/*
+
+  For optimized performance we can actually introduce a 3 way partitioning here
+  Similar to the dutch national flag  
+    
+*/    
+    
+    public static int partition3way(int[] nums, int start, int end, int ipi) {
+        
+        swap(nums, start, ipi);
+        int pivotElement = nums[start];
+        int green = start + 1;
+        int white = end;
+        
+        while(green <= white) {
+            
+            if (nums[green] < pivotElement){
+                green++;
+            }else if(nums[white] > pivotElemt){
+                white--;
+            }else {
+                swap(nums, white, green);
+                green++;
+                white--;
+            }    
+        }
+        
+        swap(nums, white, green);
+        return white;
+        
+    }
+    
     
     public static int partition(int[] nums, int start, int end, int ipi){
     
