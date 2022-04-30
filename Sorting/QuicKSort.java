@@ -51,7 +51,7 @@ public class QuicKSort {
             }    
         }
         
-        swap(nums, white, green);
+        swap(nums, white, start);
         return white;
         
     }
